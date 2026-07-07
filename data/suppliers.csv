@@ -1,0 +1,41 @@
+supplier_id,supplier_name,country,as9100_certified,approval_status,primary_commodity
+S001,Cascade Fastener Works,USA,False,Conditional,Fasteners & Hardware
+S002,Sellwood Fastener Works,USA,True,Approved,Fasteners & Hardware
+S003,Apex Fastener Works,USA,False,Approved,Fasteners & Hardware
+S004,Tilikum Fastener Works,USA,True,Approved,Fasteners & Hardware
+S005,Summit Fastener Works,USA,True,Approved,Fasteners & Hardware
+S006,Tualatin Fastener Works,USA,False,Approved,Fasteners & Hardware
+S007,Apex Precision Machining,USA,False,Approved,Machined Components
+S008,Willamette Precision Machining,USA,False,Approved,Machined Components
+S009,Rainier Precision Machining,USA,True,Approved,Machined Components
+S010,Olympic Precision Machining,USA,True,Approved,Machined Components
+S011,Northstar Precision Machining,USA,True,Approved,Machined Components
+S012,Ridgeline Precision Machining,USA,False,Approved,Machined Components
+S013,Bluewing Precision Machining,USA,True,Approved,Machined Components
+S014,Skyline Precision Machining,USA,False,Approved,Machined Components
+S015,Meridian Sheet Metal,USA,True,Approved,Sheet Metal
+S016,Lattice Sheet Metal,USA,True,Approved,Sheet Metal
+S017,Sterling Sheet Metal,USA,True,Approved,Sheet Metal
+S018,Granite Sheet Metal,USA,True,Approved,Sheet Metal
+S019,Falcon Sheet Metal,USA,False,Approved,Sheet Metal
+S020,Velocity Electronic Components,USA,True,Approved,Electrical Components
+S021,Crestline Electronic Components,USA,False,Approved,Electrical Components
+S022,Ironwood Electronic Components,USA,True,Approved,Electrical Components
+S023,Vector Electronic Components,USA,False,Approved,Electrical Components
+S024,Juniper Electronic Components,USA,False,Approved,Electrical Components
+S025,Stratus Electronic Components,USA,False,Approved,Electrical Components
+S026,Anchor Electronic Components,USA,True,Approved,Electrical Components
+S027,Pinnacle Polymer Systems,USA,True,Approved,Adhesives & Sealants
+S028,Redwood Polymer Systems,USA,True,Approved,Adhesives & Sealants
+S029,Halcyon Polymer Systems,USA,True,Approved,Adhesives & Sealants
+S030,Bridger Aerospace Assemblies,USA,True,Approved,Purchased Assemblies
+S031,Larkspur Aerospace Assemblies,USA,True,Approved,Purchased Assemblies
+S032,Quartz Aerospace Assemblies,Canada,False,Approved,Purchased Assemblies
+S033,Tamarack Aerospace Assemblies,Mexico,True,Approved,Purchased Assemblies
+S034,Foxtail Aerospace Assemblies,Germany,True,Approved,Purchased Assemblies
+S035,Silverbow Metals Supply,Japan,True,Approved,Raw Material
+S036,Kestrel Metals Supply,Taiwan,True,Approved,Raw Material
+S037,Drift Metals Supply,USA,True,Approved,Raw Material
+S038,Argo Metals Supply,UK,True,Approved,Raw Material
+S039,Pacific Anodize & Finishing,USA,True,Conditional,Outside Processing
+S040,Cobalt Anodize & Finishing,Canada,True,Approved,Outside Processing

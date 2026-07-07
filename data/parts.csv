@@ -1,0 +1,275 @@
+part_id,part_number,part_name,category,unit_cost,lead_time_days,shelf_life_days,itar_flag,make_or_buy,preferred_supplier_id,abc_class
+P0001,FAS-1001,Hi-Lok Pin A1,Fasteners & Hardware,0.34,9,,False,Buy,S002,C
+P0002,FAS-1002,Hex Bolt B1,Fasteners & Hardware,0.2,17,,False,Buy,S002,C
+P0003,FAS-1003,Nutplate C1,Fasteners & Hardware,0.27,19,,False,Buy,S003,C
+P0004,FAS-1004,Rivet D1,Fasteners & Hardware,0.09,18,,True,Buy,S001,C
+P0005,FAS-1005,Washer E1,Fasteners & Hardware,1.57,17,,False,Buy,S004,C
+P0006,FAS-1006,Lock Nut F1,Fasteners & Hardware,1.53,14,,False,Buy,S004,C
+P0007,FAS-1007,Screw A2,Fasteners & Hardware,0.09,10,,False,Buy,S005,C
+P0008,FAS-1008,Insert B2,Fasteners & Hardware,0.39,18,,False,Buy,S005,C
+P0009,FAS-1009,Clamp C2,Fasteners & Hardware,0.81,14,,False,Buy,S004,C
+P0010,FAS-1010,Stud D2,Fasteners & Hardware,0.19,15,,False,Buy,S002,C
+P0011,FAS-1011,Hi-Lok Pin E2,Fasteners & Hardware,0.13,10,,False,Buy,S001,C
+P0012,FAS-1012,Hex Bolt F2,Fasteners & Hardware,0.14,18,,False,Buy,S004,C
+P0013,FAS-1013,Nutplate A3,Fasteners & Hardware,0.18,13,,False,Buy,S002,C
+P0014,FAS-1014,Rivet B3,Fasteners & Hardware,1.55,20,,False,Buy,S001,C
+P0015,FAS-1015,Washer C3,Fasteners & Hardware,1.77,11,,True,Buy,S002,B
+P0016,FAS-1016,Lock Nut D3,Fasteners & Hardware,0.07,17,,False,Buy,S003,C
+P0017,FAS-1017,Screw E3,Fasteners & Hardware,0.1,19,,False,Buy,S001,C
+P0018,FAS-1018,Insert F3,Fasteners & Hardware,1.06,13,,False,Buy,S002,C
+P0019,FAS-1019,Clamp A4,Fasteners & Hardware,0.19,16,,False,Buy,S001,C
+P0020,FAS-1020,Stud B4,Fasteners & Hardware,0.07,11,,False,Buy,S003,C
+P0021,FAS-1021,Hi-Lok Pin C4,Fasteners & Hardware,2.68,13,,False,Buy,S006,B
+P0022,FAS-1022,Hex Bolt D4,Fasteners & Hardware,3.49,10,,False,Buy,S001,B
+P0023,FAS-1023,Nutplate E4,Fasteners & Hardware,0.36,17,,False,Buy,S005,C
+P0024,FAS-1024,Rivet F4,Fasteners & Hardware,2.61,8,,False,Buy,S003,B
+P0025,FAS-1025,Washer A5,Fasteners & Hardware,0.19,18,,False,Buy,S005,C
+P0026,FAS-1026,Lock Nut B5,Fasteners & Hardware,2.13,7,,False,Buy,S004,C
+P0027,FAS-1027,Screw C5,Fasteners & Hardware,0.33,11,,False,Buy,S005,C
+P0028,FAS-1028,Insert D5,Fasteners & Hardware,0.86,15,,False,Buy,S002,C
+P0029,FAS-1029,Clamp E5,Fasteners & Hardware,0.06,9,,False,Buy,S001,C
+P0030,FAS-1030,Stud F5,Fasteners & Hardware,0.09,16,,False,Buy,S003,C
+P0031,FAS-1031,Hi-Lok Pin A6,Fasteners & Hardware,0.11,11,,False,Buy,S001,C
+P0032,FAS-1032,Hex Bolt B6,Fasteners & Hardware,0.23,15,,True,Buy,S003,C
+P0033,FAS-1033,Nutplate C6,Fasteners & Hardware,3.34,12,,False,Buy,S001,B
+P0034,FAS-1034,Rivet D6,Fasteners & Hardware,0.07,10,,False,Buy,S004,C
+P0035,FAS-1035,Washer E6,Fasteners & Hardware,3.05,9,,False,Buy,S004,B
+P0036,FAS-1036,Lock Nut F6,Fasteners & Hardware,0.16,20,,False,Buy,S003,C
+P0037,FAS-1037,Screw A7,Fasteners & Hardware,0.34,10,,False,Buy,S004,C
+P0038,FAS-1038,Insert B7,Fasteners & Hardware,2.54,14,,False,Buy,S001,C
+P0039,FAS-1039,Clamp C7,Fasteners & Hardware,0.08,16,,False,Buy,S001,C
+P0040,FAS-1040,Stud D7,Fasteners & Hardware,0.9,17,,False,Buy,S001,C
+P0041,FAS-1041,Hi-Lok Pin E7,Fasteners & Hardware,0.08,15,,False,Buy,S005,C
+P0042,FAS-1042,Hex Bolt F7,Fasteners & Hardware,0.06,8,,False,Buy,S004,C
+P0043,FAS-1043,Nutplate A8,Fasteners & Hardware,1.9,13,,False,Buy,S001,C
+P0044,FAS-1044,Rivet B8,Fasteners & Hardware,3.25,15,,False,Buy,S005,B
+P0045,FAS-1045,Washer C8,Fasteners & Hardware,0.15,20,,False,Buy,S003,C
+P0046,FAS-1046,Lock Nut D8,Fasteners & Hardware,0.06,11,,False,Buy,S001,C
+P0047,FAS-1047,Screw E8,Fasteners & Hardware,2.49,8,,False,Buy,S006,C
+P0048,FAS-1048,Insert F8,Fasteners & Hardware,2.51,8,,False,Buy,S002,C
+P0049,FAS-1049,Clamp A9,Fasteners & Hardware,1.47,11,,False,Buy,S006,C
+P0050,FAS-1050,Stud B9,Fasteners & Hardware,0.08,17,,False,Buy,S001,C
+P0051,FAS-1051,Hi-Lok Pin C9,Fasteners & Hardware,3.03,20,,False,Buy,S002,C
+P0052,FAS-1052,Hex Bolt D9,Fasteners & Hardware,1.91,19,,False,Buy,S004,C
+P0053,FAS-1053,Nutplate E9,Fasteners & Hardware,0.69,17,,False,Buy,S001,C
+P0054,FAS-1054,Rivet F9,Fasteners & Hardware,0.19,20,,False,Buy,S005,C
+P0055,FAS-1055,Washer A10,Fasteners & Hardware,0.45,13,,True,Buy,S002,C
+P0056,FAS-1056,Lock Nut B10,Fasteners & Hardware,0.14,10,,False,Buy,S001,C
+P0057,FAS-1057,Screw C10,Fasteners & Hardware,0.09,11,,False,Buy,S001,C
+P0058,FAS-1058,Insert D10,Fasteners & Hardware,0.64,12,,False,Buy,S002,C
+P0059,FAS-1059,Clamp E10,Fasteners & Hardware,1.15,8,,False,Buy,S005,C
+P0060,FAS-1060,Stud F10,Fasteners & Hardware,0.09,14,,False,Buy,S001,C
+P0061,FAS-1061,Hi-Lok Pin A11,Fasteners & Hardware,0.19,8,,False,Buy,S004,C
+P0062,FAS-1062,Hex Bolt B11,Fasteners & Hardware,3.29,14,,False,Buy,S004,C
+P0063,FAS-1063,Nutplate C11,Fasteners & Hardware,0.06,15,,False,Buy,S006,C
+P0064,FAS-1064,Rivet D11,Fasteners & Hardware,0.08,17,,False,Buy,S006,C
+P0065,FAS-1065,Washer E11,Fasteners & Hardware,3.45,9,,False,Buy,S005,C
+P0066,FAS-1066,Lock Nut F11,Fasteners & Hardware,1.7,13,,False,Buy,S006,B
+P0067,FAS-1067,Screw A12,Fasteners & Hardware,0.05,16,,False,Buy,S004,C
+P0068,FAS-1068,Insert B12,Fasteners & Hardware,1.64,13,,False,Buy,S001,C
+P0069,FAS-1069,Clamp C12,Fasteners & Hardware,0.71,20,,False,Buy,S006,C
+P0070,FAS-1070,Stud D12,Fasteners & Hardware,0.3,8,,False,Buy,S005,C
+P0071,FAS-1071,Hi-Lok Pin E12,Fasteners & Hardware,0.87,20,,False,Buy,S001,C
+P0072,FAS-1072,Hex Bolt F12,Fasteners & Hardware,0.15,10,,False,Buy,S003,C
+P0073,FAS-1073,Nutplate A13,Fasteners & Hardware,1.79,20,,False,Buy,S001,C
+P0074,FAS-1074,Rivet B13,Fasteners & Hardware,0.68,12,,False,Buy,S002,C
+P0075,FAS-1075,Washer C13,Fasteners & Hardware,0.19,19,,False,Buy,S001,C
+P0076,FAS-1076,Lock Nut D13,Fasteners & Hardware,0.1,9,,False,Buy,S006,C
+P0077,FAS-1077,Screw E13,Fasteners & Hardware,0.08,14,,True,Buy,S006,C
+P0078,FAS-1078,Insert F13,Fasteners & Hardware,0.11,18,,False,Buy,S001,C
+P0079,MCH-1079,Hinge Fitting A1,Machined Components,345.54,64,,False,Buy,S009,A
+P0080,MCH-1080,Latch Body B1,Machined Components,197.75,60,,False,Buy,S039,B
+P0081,MCH-1081,Bracket C1,Machined Components,45.91,47,,True,Buy,S039,B
+P0082,MCH-1082,Spar Fitting D1,Machined Components,88.13,55,,False,Buy,S010,B
+P0083,MCH-1083,Cam E1,Machined Components,46.75,20,,False,Buy,S007,B
+P0084,MCH-1084,Housing F1,Machined Components,55.2,25,,True,Buy,S009,B
+P0085,MCH-1085,Shaft A2,Machined Components,748.74,57,,False,Buy,S009,A
+P0086,MCH-1086,Guide Block B2,Machined Components,697.92,33,,False,Buy,S039,A
+P0087,MCH-1087,Pivot Lug C2,Machined Components,472.45,54,,False,Buy,S007,A
+P0088,MCH-1088,Stiffener Fitting D2,Machined Components,61.26,65,,False,Buy,S007,C
+P0089,MCH-1089,Hinge Fitting E2,Machined Components,605.05,65,,False,Buy,S039,A
+P0090,MCH-1090,Latch Body F2,Machined Components,303.31,33,,True,Buy,S014,A
+P0091,MCH-1091,Bracket A3,Machined Components,181.74,29,,True,Buy,S008,A
+P0092,MCH-1092,Spar Fitting B3,Machined Components,128.12,47,,False,Buy,S007,B
+P0093,MCH-1093,Cam C3,Machined Components,133.07,30,,True,Buy,S014,A
+P0094,MCH-1094,Housing D3,Machined Components,807.92,56,,False,Buy,S040,A
+P0095,MCH-1095,Shaft E3,Machined Components,113.18,45,,False,Buy,S007,A
+P0096,MCH-1096,Guide Block F3,Machined Components,316.08,31,,False,Buy,S013,B
+P0097,MCH-1097,Pivot Lug A4,Machined Components,296.99,23,,False,Buy,S007,A
+P0098,MCH-1098,Stiffener Fitting B4,Machined Components,75.95,52,,False,Buy,S008,B
+P0099,MCH-1099,Hinge Fitting C4,Machined Components,60.78,72,,True,Buy,S007,B
+P0100,MCH-1100,Latch Body D4,Machined Components,398.47,51,,False,Buy,S009,A
+P0101,MCH-1101,Bracket E4,Machined Components,61.81,72,,False,Buy,S008,B
+P0102,MCH-1102,Spar Fitting F4,Machined Components,262.28,44,,False,Buy,S014,A
+P0103,MCH-1103,Cam A5,Machined Components,800.71,24,,False,Buy,S039,A
+P0104,MCH-1104,Housing B5,Machined Components,54.05,48,,True,Buy,S007,B
+P0105,MCH-1105,Shaft C5,Machined Components,239.46,20,,False,Buy,S040,B
+P0106,MCH-1106,Guide Block D5,Machined Components,209.42,60,,False,Buy,S012,A
+P0107,MCH-1107,Pivot Lug E5,Machined Components,190.15,32,,False,Buy,S010,B
+P0108,MCH-1108,Stiffener Fitting F5,Machined Components,58.45,63,,True,Buy,S007,C
+P0109,MCH-1109,Hinge Fitting A6,Machined Components,321.41,60,,False,Buy,S039,A
+P0110,MCH-1110,Latch Body B6,Machined Components,335.31,60,,False,Buy,S011,A
+P0111,MCH-1111,Bracket C6,Machined Components,447.76,54,,False,Buy,S013,B
+P0112,MCH-1112,Spar Fitting D6,Machined Components,108.3,37,,True,Buy,S039,A
+P0113,MCH-1113,Cam E6,Machined Components,775.99,50,,False,Buy,S007,A
+P0114,MCH-1114,Housing F6,Machined Components,403.52,29,,False,Buy,S009,A
+P0115,MCH-1115,Shaft A7,Machined Components,473.69,53,,False,Buy,S014,A
+P0116,MCH-1116,Guide Block B7,Machined Components,910.61,20,,False,Buy,S013,A
+P0117,MCH-1117,Pivot Lug C7,Machined Components,58.22,34,,False,Buy,S040,B
+P0118,MCH-1118,Stiffener Fitting D7,Machined Components,58.85,46,,False,Buy,S014,B
+P0119,MCH-1119,Hinge Fitting E7,Machined Components,41.59,25,,False,Buy,S039,C
+P0120,MCH-1120,Latch Body F7,Machined Components,101.95,73,,False,Buy,S039,C
+P0121,MCH-1121,Bracket A8,Machined Components,104.09,48,,False,Buy,S007,B
+P0122,MCH-1122,Spar Fitting B8,Machined Components,56.78,41,,False,Buy,S010,B
+P0123,MCH-1123,Cam C8,Machined Components,98.32,62,,True,Buy,S010,C
+P0124,MCH-1124,Housing D8,Machined Components,947.31,21,,False,Buy,S009,A
+P0125,MCH-1125,Shaft E8,Machined Components,53.27,57,,True,Buy,S007,B
+P0126,MCH-1126,Guide Block F8,Machined Components,85.77,44,,False,Buy,S012,B
+P0127,MCH-1127,Pivot Lug A9,Machined Components,74.94,20,,False,Buy,S007,B
+P0128,MCH-1128,Stiffener Fitting B9,Machined Components,44.85,20,,True,Buy,S008,B
+P0129,SHM-1129,Door Skin A1,Sheet Metal,84.48,44,,False,Buy,S018,B
+P0130,SHM-1130,Panel B1,Sheet Metal,169.2,21,,False,Buy,S018,A
+P0131,SHM-1131,Doubler C1,Sheet Metal,211.6,17,,False,Buy,S040,B
+P0132,SHM-1132,Rib D1,Sheet Metal,163.78,27,,False,Buy,S016,A
+P0133,SHM-1133,Gusset E1,Sheet Metal,21.42,35,,False,Buy,S039,C
+P0134,SHM-1134,Closeout F1,Sheet Metal,90.49,16,,False,Buy,S015,B
+P0135,SHM-1135,Frame Channel A2,Sheet Metal,121.96,15,,False,Buy,S015,B
+P0136,SHM-1136,Stringer Clip B2,Sheet Metal,113.65,30,,False,Buy,S017,C
+P0137,SHM-1137,Door Skin C2,Sheet Metal,17.52,16,,True,Buy,S039,C
+P0138,SHM-1138,Panel D2,Sheet Metal,186.83,28,,False,Buy,S017,C
+P0139,SHM-1139,Doubler E2,Sheet Metal,19.49,37,,False,Buy,S039,C
+P0140,SHM-1140,Rib F2,Sheet Metal,55.49,30,,False,Buy,S016,C
+P0141,SHM-1141,Gusset A3,Sheet Metal,76.78,27,,False,Buy,S039,C
+P0142,SHM-1142,Closeout B3,Sheet Metal,35.43,26,,False,Buy,S018,C
+P0143,SHM-1143,Frame Channel C3,Sheet Metal,95.59,27,,False,Buy,S016,B
+P0144,SHM-1144,Stringer Clip D3,Sheet Metal,63.96,35,,False,Buy,S019,B
+P0145,SHM-1145,Door Skin E3,Sheet Metal,21.08,44,,False,Buy,S039,C
+P0146,SHM-1146,Panel F3,Sheet Metal,35.78,33,,False,Buy,S015,C
+P0147,SHM-1147,Doubler A4,Sheet Metal,91.69,44,,False,Buy,S039,B
+P0148,SHM-1148,Rib B4,Sheet Metal,27.91,43,,False,Buy,S019,C
+P0149,SHM-1149,Gusset C4,Sheet Metal,16.63,23,,False,Buy,S039,C
+P0150,SHM-1150,Closeout D4,Sheet Metal,28.55,16,,False,Buy,S017,C
+P0151,SHM-1151,Frame Channel E4,Sheet Metal,111.12,30,,False,Buy,S019,B
+P0152,SHM-1152,Stringer Clip F4,Sheet Metal,36.97,21,,False,Buy,S016,C
+P0153,SHM-1153,Door Skin A5,Sheet Metal,51.35,30,,False,Buy,S015,B
+P0154,SHM-1154,Panel B5,Sheet Metal,64.76,39,,False,Buy,S039,B
+P0155,SHM-1155,Doubler C5,Sheet Metal,207.57,40,,False,Buy,S015,B
+P0156,SHM-1156,Rib D5,Sheet Metal,146.9,21,,False,Buy,S018,A
+P0157,SHM-1157,Gusset E5,Sheet Metal,61.42,15,,False,Buy,S019,B
+P0158,SHM-1158,Closeout F5,Sheet Metal,165.66,39,,False,Buy,S016,C
+P0159,SHM-1159,Frame Channel A6,Sheet Metal,38.91,29,,False,Buy,S039,C
+P0160,SHM-1160,Stringer Clip B6,Sheet Metal,124.8,41,,False,Buy,S040,B
+P0161,SHM-1161,Door Skin C6,Sheet Metal,172.68,26,,False,Buy,S039,B
+P0162,SHM-1162,Panel D6,Sheet Metal,83.26,34,,False,Buy,S040,B
+P0163,ELE-1163,LED Strip A1,Electrical Components,342.01,16,,False,Buy,S020,A
+P0164,ELE-1164,Wire Harness B1,Electrical Components,13.95,37,,False,Buy,S022,C
+P0165,ELE-1165,Connector C1,Electrical Components,20.39,42,,True,Buy,S020,B
+P0166,ELE-1166,Switch D1,Electrical Components,8.43,37,,False,Buy,S024,C
+P0167,ELE-1167,Terminal Block E1,Electrical Components,6.81,26,,False,Buy,S026,C
+P0168,ELE-1168,Sensor F1,Electrical Components,46.81,20,,False,Buy,S023,A
+P0169,ELE-1169,Relay A2,Electrical Components,6.04,29,,False,Buy,S020,C
+P0170,ELE-1170,Light Lens B2,Electrical Components,4.46,39,,False,Buy,S024,C
+P0171,ELE-1171,PCB Module C2,Electrical Components,30.5,42,,False,Buy,S024,B
+P0172,ELE-1172,LED Strip D2,Electrical Components,265.39,43,,False,Buy,S023,A
+P0173,ELE-1173,Wire Harness E2,Electrical Components,12.7,20,,False,Buy,S026,C
+P0174,ELE-1174,Connector F2,Electrical Components,34.34,14,,False,Buy,S020,B
+P0175,ELE-1175,Switch A3,Electrical Components,193.9,40,,False,Buy,S023,A
+P0176,ELE-1176,Terminal Block B3,Electrical Components,82.31,38,,True,Buy,S023,B
+P0177,ELE-1177,Sensor C3,Electrical Components,18.36,37,,False,Buy,S026,C
+P0178,ELE-1178,Relay D3,Electrical Components,194.75,24,,False,Buy,S021,B
+P0179,ELE-1179,Light Lens E3,Electrical Components,202.14,25,,False,Buy,S020,A
+P0180,ELE-1180,PCB Module F3,Electrical Components,54.6,17,,False,Buy,S020,C
+P0181,ELE-1181,LED Strip A4,Electrical Components,35.29,40,,False,Buy,S024,A
+P0182,ELE-1182,Wire Harness B4,Electrical Components,21.5,44,,False,Buy,S020,C
+P0183,ELE-1183,Connector C4,Electrical Components,7.21,14,,False,Buy,S020,C
+P0184,ELE-1184,Switch D4,Electrical Components,3.39,32,,False,Buy,S025,C
+P0185,ELE-1185,Terminal Block E4,Electrical Components,13.71,18,,True,Buy,S022,C
+P0186,ELE-1186,Sensor F4,Electrical Components,11.85,19,,False,Buy,S023,C
+P0187,ELE-1187,Relay A5,Electrical Components,383.89,38,,False,Buy,S026,A
+P0188,ELE-1188,Light Lens B5,Electrical Components,129.2,34,,False,Buy,S026,A
+P0189,ELE-1189,PCB Module C5,Electrical Components,350.18,33,,False,Buy,S024,A
+P0190,ELE-1190,LED Strip D5,Electrical Components,5.27,29,,False,Buy,S022,C
+P0191,ELE-1191,Wire Harness E5,Electrical Components,46.15,43,,False,Buy,S025,B
+P0192,ELE-1192,Connector F5,Electrical Components,389.18,18,,False,Buy,S025,A
+P0193,ELE-1193,Switch A6,Electrical Components,122.09,33,,False,Buy,S021,A
+P0194,ELE-1194,Terminal Block B6,Electrical Components,3.67,29,,False,Buy,S020,C
+P0195,ELE-1195,Sensor C6,Electrical Components,391.04,40,,False,Buy,S020,A
+P0196,ELE-1196,Relay D6,Electrical Components,22.93,16,,False,Buy,S026,B
+P0197,ELE-1197,Light Lens E6,Electrical Components,46.69,30,,False,Buy,S025,C
+P0198,ELE-1198,PCB Module F6,Electrical Components,174.78,21,,False,Buy,S026,A
+P0199,ELE-1199,LED Strip A7,Electrical Components,3.82,25,,False,Buy,S020,C
+P0200,ELE-1200,Wire Harness B7,Electrical Components,101.83,34,,False,Buy,S020,B
+P0201,ELE-1201,Connector C7,Electrical Components,115.89,26,,True,Buy,S024,A
+P0202,ELE-1202,Switch D7,Electrical Components,9.56,17,,False,Buy,S020,C
+P0203,ELE-1203,Terminal Block E7,Electrical Components,3.07,43,,False,Buy,S021,C
+P0204,ELE-1204,Sensor F7,Electrical Components,3.47,37,,False,Buy,S026,C
+P0205,ELE-1205,Relay A8,Electrical Components,82.89,21,,False,Buy,S024,B
+P0206,ELE-1206,Light Lens B8,Electrical Components,16.75,38,,False,Buy,S026,C
+P0207,ELE-1207,PCB Module C8,Electrical Components,55.47,27,,False,Buy,S026,A
+P0208,ELE-1208,LED Strip D8,Electrical Components,239.77,40,,False,Buy,S024,A
+P0209,ADH-1209,Epoxy Adhesive A1,Adhesives & Sealants,59.13,27,365.0,False,Buy,S028,C
+P0210,ADH-1210,Fuel Tank Sealant B1,Adhesives & Sealants,52.72,44,365.0,False,Buy,S029,C
+P0211,ADH-1211,Primer C1,Adhesives & Sealants,106.3,19,365.0,False,Buy,S027,C
+P0212,ADH-1212,Potting Compound D1,Adhesives & Sealants,67.14,32,270.0,False,Buy,S029,B
+P0213,ADH-1213,Structural Film Adhesive E1,Adhesives & Sealants,35.06,17,270.0,False,Buy,S029,C
+P0214,ADH-1214,Surface Sealant F1,Adhesives & Sealants,26.14,20,180.0,False,Buy,S028,C
+P0215,ADH-1215,Epoxy Adhesive A2,Adhesives & Sealants,59.33,27,270.0,False,Buy,S028,C
+P0216,ADH-1216,Fuel Tank Sealant B2,Adhesives & Sealants,97.57,37,365.0,False,Buy,S029,C
+P0217,ADH-1217,Primer C2,Adhesives & Sealants,45.19,31,180.0,False,Buy,S029,C
+P0218,ADH-1218,Potting Compound D2,Adhesives & Sealants,162.03,30,180.0,False,Buy,S028,C
+P0219,ADH-1219,Structural Film Adhesive E2,Adhesives & Sealants,53.12,40,180.0,False,Buy,S028,C
+P0220,ADH-1220,Surface Sealant F2,Adhesives & Sealants,225.91,18,180.0,False,Buy,S029,A
+P0221,ADH-1221,Epoxy Adhesive A3,Adhesives & Sealants,183.61,32,365.0,False,Buy,S029,B
+P0222,ADH-1222,Fuel Tank Sealant B3,Adhesives & Sealants,305.89,28,270.0,False,Buy,S027,C
+P0223,ASY-1223,Oxygen Module A1,Purchased Assemblies,1969.02,34,,True,Buy,S030,A
+P0224,ASY-1224,Reading Light Assy B1,Purchased Assemblies,745.68,37,,False,Buy,S031,A
+P0225,ASY-1225,Gasper Outlet C1,Purchased Assemblies,2289.06,62,,False,Buy,S034,A
+P0226,ASY-1226,Latch Mechanism D1,Purchased Assemblies,166.15,71,,True,Buy,S032,B
+P0227,ASY-1227,Speaker Assy E1,Purchased Assemblies,168.65,22,,True,Buy,S034,B
+P0228,ASY-1228,PSB Sign Assy F1,Purchased Assemblies,549.45,34,,False,Buy,S030,A
+P0229,ASY-1229,Hinge Assy A2,Purchased Assemblies,173.47,66,,False,Buy,S032,B
+P0230,ASY-1230,Oxygen Module B2,Purchased Assemblies,178.27,69,,True,Buy,S032,A
+P0231,ASY-1231,Reading Light Assy C2,Purchased Assemblies,355.08,46,,False,Buy,S030,A
+P0232,ASY-1232,Gasper Outlet D2,Purchased Assemblies,150.71,35,,False,Buy,S030,C
+P0233,ASY-1233,Latch Mechanism E2,Purchased Assemblies,150.53,26,,False,Buy,S030,A
+P0234,ASY-1234,Speaker Assy F2,Purchased Assemblies,387.93,42,,False,Buy,S031,A
+P0235,ASY-1235,PSB Sign Assy A3,Purchased Assemblies,1652.89,49,,False,Buy,S033,A
+P0236,ASY-1236,Hinge Assy B3,Purchased Assemblies,299.57,70,,False,Buy,S030,B
+P0237,ASY-1237,Oxygen Module C3,Purchased Assemblies,287.65,60,,False,Buy,S033,A
+P0238,ASY-1238,Reading Light Assy D3,Purchased Assemblies,172.29,47,,False,Buy,S032,A
+P0239,ASY-1239,Gasper Outlet E3,Purchased Assemblies,230.4,53,,True,Buy,S034,B
+P0240,ASY-1240,Latch Mechanism F3,Purchased Assemblies,2062.55,24,,True,Buy,S034,A
+P0241,ASY-1241,Speaker Assy A4,Purchased Assemblies,164.0,28,,False,Buy,S033,A
+P0242,ASY-1242,PSB Sign Assy B4,Purchased Assemblies,298.85,24,,False,Buy,S032,A
+P0243,RAW-1243,7075 Sheet A1,Raw Material,79.82,29,,False,Buy,S035,B
+P0244,RAW-1244,2024 Sheet B1,Raw Material,42.78,28,,False,Buy,S037,B
+P0245,RAW-1245,6061 Extrusion C1,Raw Material,81.14,23,,False,Buy,S037,C
+P0246,RAW-1246,Ti Bar D1,Raw Material,27.39,44,,False,Buy,S035,B
+P0247,RAW-1247,SS Tube E1,Raw Material,21.3,36,,False,Buy,S038,C
+P0248,RAW-1248,Honeycomb Core F1,Raw Material,69.67,17,,False,Buy,S036,C
+P0249,RAW-1249,Phenolic Block A2,Raw Material,24.55,33,,False,Buy,S035,B
+P0250,RAW-1250,7075 Sheet B2,Raw Material,8.67,36,,True,Buy,S037,C
+P0251,RAW-1251,2024 Sheet C2,Raw Material,12.52,34,,False,Buy,S037,C
+P0252,RAW-1252,6061 Extrusion D2,Raw Material,59.12,39,,False,Buy,S036,C
+P0253,RAW-1253,Ti Bar E2,Raw Material,39.95,21,,False,Buy,S035,B
+P0254,RAW-1254,SS Tube F2,Raw Material,52.27,15,,False,Buy,S035,B
+P0255,RAW-1255,Honeycomb Core A3,Raw Material,117.36,22,,True,Buy,S036,A
+P0256,RAW-1256,Phenolic Block B3,Raw Material,117.77,31,,False,Buy,S036,A
+P0257,RAW-1257,7075 Sheet C3,Raw Material,90.87,16,,False,Buy,S035,B
+P0258,RAW-1258,2024 Sheet D3,Raw Material,43.09,19,,True,Buy,S036,C
+P0259,RAW-1259,6061 Extrusion E3,Raw Material,40.03,18,,False,Buy,S038,B
+P0260,RAW-1260,Ti Bar F3,Raw Material,77.02,19,,False,Buy,S035,B
+P0261,RAW-1261,SS Tube A4,Raw Material,14.97,40,,False,Buy,S037,C
+P0262,RAW-1262,Honeycomb Core B4,Raw Material,41.82,19,,False,Buy,S035,C
+P0263,RAW-1263,Phenolic Block C4,Raw Material,50.12,30,,False,Buy,S036,B
+P0264,RAW-1264,7075 Sheet D4,Raw Material,62.38,36,,False,Buy,S037,B
+P0265,RAW-1265,2024 Sheet E4,Raw Material,32.23,43,,False,Buy,S038,C
+P0266,RAW-1266,6061 Extrusion F4,Raw Material,32.73,27,,False,Buy,S037,B
+P0267,RAW-1267,Ti Bar A5,Raw Material,89.0,34,,False,Buy,S036,A
+P0268,RAW-1268,SS Tube B5,Raw Material,11.99,25,,False,Buy,S038,C
+P0269,RAW-1269,Honeycomb Core C5,Raw Material,13.73,42,,False,Buy,S035,C
+P0270,RAW-1270,Phenolic Block D5,Raw Material,14.21,24,,False,Buy,S036,C
+P0271,RAW-1271,7075 Sheet E5,Raw Material,86.32,34,,False,Buy,S035,C
+P0272,RAW-1272,2024 Sheet F5,Raw Material,59.62,34,,False,Buy,S035,B
+P9001,PSU-100,Passenger Service Unit Assy,Finished Assembly,0.0,0,,True,Make,,A
+P9002,FAD-200,Fuel Access Door Assy,Finished Assembly,0.0,0,,True,Make,,A

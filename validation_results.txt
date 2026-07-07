@@ -1,0 +1,201 @@
+
+===== Q01 · Inventory value by ABC class (latest snapshot) =====
+abc_class  parts  inventory_value  pct_of_value
+        A     60        3236692.0          56.5
+        C    138        2133741.0          37.2
+        B     74         359305.0           6.3
+
+===== Q02 · Top 10 parts by inventory value (latest snapshot) =====
+part_number             part_name              category abc_class  system_qty  value_on_hand
+   ASY-1235      PSB Sign Assy A3  Purchased Assemblies         A         319       527272.0
+   ASY-1240    Latch Mechanism F3  Purchased Assemblies         A         191       393947.0
+   MCH-1124            Housing D8   Machined Components         A         337       319243.0
+   ASY-1228      PSB Sign Assy F1  Purchased Assemblies         A         548       301099.0
+   ELE-1195             Sensor C6 Electrical Components         A         363       141948.0
+   ASY-1237      Oxygen Module C3  Purchased Assemblies         A         469       134908.0
+   ASY-1231 Reading Light Assy C2  Purchased Assemblies         A         376       133510.0
+   ASY-1242      PSB Sign Assy B4  Purchased Assemblies         A         445       132988.0
+   ELE-1175             Switch A3 Electrical Components         A         531       102961.0
+   ASY-1232      Gasper Outlet D2  Purchased Assemblies         C         628        94646.0
+
+===== Q03 · Company-wide on-time delivery, by month (received lines only) =====
+     month  lines_received  otd_pct
+2024-07-01              12     75.0
+2024-08-01              56     76.8
+2024-09-01              55     80.0
+2024-10-01              76     76.3
+2024-11-01              72     77.8
+2024-12-01              54     79.6
+2025-01-01              57     64.9
+2025-02-01              57     82.5
+2025-03-01              69     68.1
+2025-04-01              66     72.7
+2025-05-01              61     75.4
+2025-06-01              74     78.4
+2025-07-01              82     65.9
+2025-08-01              77     74.0
+2025-09-01              65     72.3
+2025-10-01              55     74.5
+2025-11-01              55     81.8
+2025-12-01              60     68.3
+2026-01-01              74     67.6
+2026-02-01              54     59.3
+2026-03-01              62     62.9
+2026-04-01              62     75.8
+2026-05-01              46     73.9
+2026-06-01               1    100.0
+
+===== Q04 · Supplier scorecard: OTD %, average days late, spend impacted =====
+                  supplier_name     primary_commodity approval_status  lines  otd_pct  avg_days_late  late_spend
+         Cascade Fastener Works  Fasteners & Hardware     Conditional    136     15.4           11.3     55754.0
+       Apex Precision Machining   Machined Components        Approved     76     25.0            8.0    780788.0
+ Velocity Electronic Components Electrical Components        Approved     59     30.5           11.2    375450.0
+    Pacific Anodize & Finishing    Outside Processing     Conditional     99     57.6           13.8    185473.0
+Crestline Electronic Components Electrical Components        Approved     16     62.5            4.7     33415.0
+           Meridian Sheet Metal           Sheet Metal        Approved     26     80.8            5.2     19832.0
+   Anchor Electronic Components Electrical Components        Approved     52     82.7            4.4     85303.0
+    Olympic Precision Machining   Machined Components        Approved     29     82.8            3.8     13088.0
+   Vector Electronic Components Electrical Components        Approved     18     83.3            5.3     23348.0
+            Apex Fastener Works  Fasteners & Hardware        Approved     49     83.7            4.3       936.0
+
+===== Q05 · Quarterly OTD trend for the worst suppliers, with change vs =====
+                 supplier_name        qtr  otd_pct  change_vs_prior_qtr
+      Apex Precision Machining 2024-07-01     66.7                  NaN
+      Apex Precision Machining 2024-10-01     16.7                -50.0
+      Apex Precision Machining 2025-01-01     11.8                 -4.9
+      Apex Precision Machining 2025-04-01     22.2                 10.4
+      Apex Precision Machining 2025-07-01     26.7                  4.5
+      Apex Precision Machining 2025-10-01     40.0                 13.3
+      Apex Precision Machining 2026-01-01     22.2                -17.8
+      Apex Precision Machining 2026-04-01     66.7                 44.5
+        Cascade Fastener Works 2024-07-01     23.5                  NaN
+        Cascade Fastener Works 2024-10-01     10.5                -13.0
+        Cascade Fastener Works 2025-01-01     14.3                  3.8
+        Cascade Fastener Works 2025-04-01     14.3                  0.0
+        Cascade Fastener Works 2025-07-01     10.0                 -4.3
+        Cascade Fastener Works 2025-10-01     35.7                 25.7
+        Cascade Fastener Works 2026-01-01      5.6                -30.1
+        Cascade Fastener Works 2026-04-01     15.4                  9.8
+   Pacific Anodize & Finishing 2024-07-01    100.0                  NaN
+   Pacific Anodize & Finishing 2024-10-01     66.7                -33.3
+   Pacific Anodize & Finishing 2025-01-01     94.1                 27.4
+   Pacific Anodize & Finishing 2025-04-01     94.4                  0.3
+   Pacific Anodize & Finishing 2025-07-01     50.0                -44.4
+   Pacific Anodize & Finishing 2025-10-01     41.7                 -8.3
+   Pacific Anodize & Finishing 2026-01-01      0.0                -41.7
+   Pacific Anodize & Finishing 2026-04-01      0.0                  0.0
+Velocity Electronic Components 2024-07-01    100.0                  NaN
+Velocity Electronic Components 2024-10-01     22.2                -77.8
+Velocity Electronic Components 2025-01-01     50.0                 27.8
+Velocity Electronic Components 2025-04-01     30.0                -20.0
+Velocity Electronic Components 2025-07-01     28.6                 -1.4
+Velocity Electronic Components 2025-10-01     14.3                -14.3
+Velocity Electronic Components 2026-01-01     25.0                 10.7
+Velocity Electronic Components 2026-04-01      0.0                -25.0
+
+===== Q06 · Quoted vs actual lead time by supplier =====
+                  supplier_name  quoted_lt_days  actual_lt_days  gap_days
+         Cascade Fastener Works            15.0            28.0      13.0
+ Velocity Electronic Components            27.0            37.0      11.0
+       Apex Precision Machining            46.0            55.0       9.0
+    Pacific Anodize & Finishing            39.0            47.0       8.0
+Crestline Electronic Components            34.0            38.0       4.0
+   Vector Electronic Components            32.0            35.0       3.0
+   Anchor Electronic Components            29.0            31.0       3.0
+           Meridian Sheet Metal            25.0            28.0       3.0
+         Tilikum Fastener Works            13.0            15.0       2.0
+    Olympic Precision Machining            49.0            51.0       2.0
+
+===== Q07 · Open-PO exposure: overdue lines as of 2026-06-01 =====
+                 supplier_name part_number         part_name po_number promised_date  days_overdue  qty_ordered  open_value
+        Cascade Fastener Works    FAS-1043       Nutplate A8  PO-24491    2026-03-19            74         3511      6811.0
+        Cascade Fastener Works    FAS-1056      Lock Nut B10  PO-24490    2026-03-23            70         1547       217.0
+        Cascade Fastener Works    FAS-1031     Hi-Lok Pin A6  PO-24491    2026-03-28            65          817        90.0
+        Cascade Fastener Works    FAS-1029          Clamp E5  PO-24492    2026-04-05            57         2380       143.0
+        Cascade Fastener Works    FAS-1017          Screw E3  PO-24492    2026-04-08            54         2618       262.0
+       Silverbow Metals Supply    RAW-1246         Ti Bar D1  PO-24444    2026-04-19            43           98      2661.0
+        Cascade Fastener Works    FAS-1039          Clamp C7  PO-24492    2026-04-19            43          645        52.0
+        Cascade Fastener Works    FAS-1040           Stud D7  PO-24491    2026-04-24            38         2261      2080.0
+   Rainier Precision Machining    MCH-1079  Hinge Fitting A1  PO-24140    2026-04-27            35           84     28889.0
+       Sellwood Fastener Works    FAS-1051     Hi-Lok Pin C9  PO-24083    2026-05-03            29          659      2036.0
+      Apex Precision Machining    MCH-1097      Pivot Lug A4  PO-24175    2026-05-14            18           99     31065.0
+  Anchor Electronic Components    ELE-1167 Terminal Block E1  PO-24305    2026-05-14            18          225      1595.0
+Velocity Electronic Components    ELE-1163      LED Strip A1  PO-24299    2026-05-17            15          138     48521.0
+   Pacific Anodize & Finishing    MCH-1103            Cam A5  PO-24184    2026-05-24             8           11      9134.0
+        Cascade Fastener Works    FAS-1068        Insert B12  PO-24120    2026-05-24             8          667      1121.0
+
+===== Q08 · Record accuracy by ABC class =====
+abc_class  part_months  accuracy_pct  avg_units_off
+        A         1080          96.9           13.0
+        B         1332          91.0           34.8
+        C         2484          87.3          417.9
+
+===== Q09 · Worst 15 parts by miss frequency (with $ variance) =====
+part_number         part_name abc_class              category  months_missed  miss_rate_pct  abs_variance_value
+   ELE-1183      Connector C4         C Electrical Components              7           39.0              3994.0
+   ELE-1180     PCB Module F3         C Electrical Components              6           33.0              8954.0
+   FAS-1005         Washer E1         C  Fasteners & Hardware              5           28.0             12759.0
+   ADH-1215 Epoxy Adhesive A2         C  Adhesives & Sealants              5           28.0              3144.0
+   SHM-1141         Gusset A3         C           Sheet Metal              5           28.0              1228.0
+   FAS-1053       Nutplate E9         C  Fasteners & Hardware              5           28.0              1130.0
+   RAW-1265     2024 Sheet E4         C          Raw Material              5           28.0               935.0
+   FAS-1074         Rivet B13         C  Fasteners & Hardware              5           28.0               589.0
+   FAS-1017          Screw E3         C  Fasteners & Hardware              5           28.0               262.0
+   FAS-1012       Hex Bolt F2         C  Fasteners & Hardware              5           28.0               206.0
+   FAS-1076      Lock Nut D13         C  Fasteners & Hardware              5           28.0               193.0
+   SHM-1137      Door Skin C2         C           Sheet Metal              4           22.0             25089.0
+   SHM-1136  Stringer Clip B2         C           Sheet Metal              4           22.0             13183.0
+   ELE-1199      LED Strip A7         C Electrical Components              4           22.0              4263.0
+   RAW-1244     2024 Sheet B1         B          Raw Material              4           22.0              3380.0
+
+===== Q10 · Where the variance dollars live (by class) =====
+abc_class  total_abs_variance_value  avg_value_per_miss
+        A                  118886.0              3497.0
+        B                   59010.0               492.0
+        C                  263884.0               838.0
+
+===== Q11 · Excess stock: parts holding > 6 months of supply (latest month) =====
+part_number             part_name abc_class  system_qty  avg_mo_demand  months_of_supply  value_on_hand
+   ASY-1235      PSB Sign Assy A3         A         319           33.0               9.8       527272.0
+   MCH-1124            Housing D8         A         337            6.0              61.3       319243.0
+   ASY-1228      PSB Sign Assy F1         A         548           28.0              19.5       301099.0
+   ELE-1195             Sensor C6         A         363           31.0              11.6       141948.0
+   ASY-1237      Oxygen Module C3         A         469           22.0              21.5       134908.0
+   ASY-1231 Reading Light Assy C2         A         376           32.0              11.6       133510.0
+   ASY-1242      PSB Sign Assy B4         A         445           26.0              17.5       132988.0
+   ELE-1175             Switch A3         A         531           50.0              10.7       102961.0
+   ASY-1232      Gasper Outlet D2         C         628            8.0              75.4        94646.0
+   ELE-1188         Light Lens B5         A         726           78.0               9.3        93799.0
+   SHM-1130              Panel B1         A         550           39.0              14.2        93060.0
+   FAS-1062          Hex Bolt B11         C       23283          421.0              55.3        76601.0
+   FAS-1005             Washer E1         C       47131          663.0              71.1        73996.0
+   SHM-1136      Stringer Clip B2         C         628            6.0             107.7        71372.0
+   ADH-1217             Primer C2         C        1548           28.0              55.0        69954.0
+
+===== Q12 · Component shortages for released work orders =====
+part_number     part_name abc_class  total_required  on_hand  surplus_or_short  shortage_value
+   FAS-1017      Screw E3         C          2618.0      236           -2382.0           238.0
+   FAS-1043   Nutplate A8         C          3511.0     1227           -2284.0          4340.0
+   FAS-1029      Clamp E5         C          2380.0      170           -2210.0           133.0
+   FAS-1040       Stud D7         C          2261.0      233           -2028.0          1825.0
+   FAS-1056  Lock Nut B10         C          1547.0      367           -1180.0           165.0
+   FAS-1039      Clamp C7         C           645.0      125            -520.0            42.0
+   FAS-1031 Hi-Lok Pin A6         C           817.0      319            -498.0            55.0
+
+===== Q13 · Root cause: are the short parts stuck behind late suppliers? =====
+part_number     part_name  short_qty          supplier_name  supplier_otd_pct po_number promised_date  days_overdue  qty_inbound
+   FAS-1017      Screw E3     2382.0 Cascade Fastener Works              15.0  PO-24492    2026-04-08            54         2618
+   FAS-1043   Nutplate A8     2284.0 Cascade Fastener Works              15.0  PO-24491    2026-03-19            74         3511
+   FAS-1029      Clamp E5     2210.0 Cascade Fastener Works              15.0  PO-24492    2026-04-05            57         2380
+   FAS-1040       Stud D7     2028.0 Cascade Fastener Works              15.0  PO-24491    2026-04-24            38         2261
+   FAS-1056  Lock Nut B10     1180.0 Cascade Fastener Works              15.0  PO-24490    2026-03-23            70         1547
+   FAS-1039      Clamp C7      520.0 Cascade Fastener Works              15.0  PO-24492    2026-04-19            43          645
+   FAS-1031 Hi-Lok Pin A6      498.0 Cascade Fastener Works              15.0  PO-24491    2026-03-28            65          817
+
+===== Q14 · Bonus: shelf-life exposure on adhesives & sealants =====
+part_number                   part_name  shelf_life_days   last_rcv est_expiry  system_qty  value_at_risk
+   ADH-1212         Potting Compound D1            270.0 2024-11-12 2025-08-09          56         3760.0
+   ADH-1215           Epoxy Adhesive A2            270.0 2025-02-18 2025-11-15         256        15188.0
+   ADH-1222        Fuel Tank Sealant B3            270.0 2025-04-04 2025-12-30         164        50166.0
+   ADH-1210        Fuel Tank Sealant B1            365.0 2025-07-25 2026-07-25         252        13285.0
+   ADH-1213 Structural Film Adhesive E1            270.0 2025-11-14 2026-08-11         108         3786.0

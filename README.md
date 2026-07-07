@@ -14,20 +14,32 @@ Full writeup with numbers: [`FINDINGS.md`](FINDINGS.md)
 
 ## Visuals
 
+Each chart exists to answer one specific question from the analysis — rendered by `make_visuals.py` (Q-numbers reference `sql/analysis_queries.sql`).
+
 ### Supplier OTD Scorecard
 ![Supplier OTD scorecard](visuals/supplier_scorecard.png)
+
+**Why this chart:** the first question any buyer asks is "who's late?" — but a raw OTD % alone can mislead. The scorecard (Q04) puts OTD next to volume, average days late, and dollars on late lines, so a 15% supplier with $56K of late spend and a 25% supplier with $781K read as two different problems. The 15-line minimum keeps small-sample suppliers from polluting the ranking.
 
 ### Chronic vs Collapsing Suppliers
 ![Quarterly OTD trend](visuals/otd_quarterly_trend.png)
 
+**Why this chart:** a single OTD number hides direction. The quarterly trend (Q05, built with `LAG()`) separates the two failure modes that need different conversations: Cascade has been bad in every quarter for two years (a sourcing decision), while Pacific Anodize was near-perfect until mid-2025 and then collapsed to 0% (a "what changed at your site?" conversation). The all-supplier line is the baseline both are judged against.
+
 ### Cycle-Count Accuracy by ABC Class
 ![Cycle-count accuracy](visuals/cycle_count_accuracy.png)
+
+**Why this chart:** two panels because there are two different problems, and averaging them hides both. The left panel (Q08) shows *frequency* — record accuracy degrades down the ABC ladder, exactly where count attention is lowest. The right panel (Q10) shows *severity* — C-class leaks the most total dollars through sheer miss volume, but a rare A-class miss costs 4× more per event. The fix is different for each, which is why recommendation 4 targets both ends.
 
 ### Shortage Root Cause — One Supplier, Seven Part Numbers
 ![Shortage root cause](visuals/shortage_root_cause.png)
 
+**Why this chart:** the BOM explosion (Q12) found 7 parts short for released work orders — this chart proves it's really *one* problem. Pairing each shortage (red) with the units already inbound on an overdue Cascade PO (blue) shows the inbound quantity covers the shortfall in every case. No new buys needed; the fix is expediting one supplier, and the days-overdue labels say how urgent that is.
+
 ### Shelf-Life Exposure
 ![Shelf-life exposure](visuals/shelf_life_exposure.png)
+
+**Why this chart:** in an AS9100 shop, expired sealant on the shelf is a quarantine-and-disposition action, not just a cost line. The chart (Q14) splits the exposure into material already past estimated expiry (red, labeled) versus lots inside the 90-day warning window (amber), sized by dollars at risk — which is what makes the $50K of fuel tank sealant the headline.
 
 ## Repo structure
 

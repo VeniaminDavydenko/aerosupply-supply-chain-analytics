@@ -18,7 +18,7 @@ Company-wide on-time delivery runs in the low-to-mid 70s and has been slipping: 
 | Velocity Electronic Components | 30.5% | 11.2 | $375K |
 | Pacific Anodize & Finishing | 57.6% | 13.8 | $185K |
 
-The quarterly trend (Q05, using LAG) separates two very different problems. Cascade has **always** been bad — 10–24% OTD in every quarter for two years. Pacific Anodize is the opposite: it ran **94–100% on-time through Q2 2025, then collapsed to 50% → 42% → 0% → 0%**. Something changed at that supplier around mid-2025 (capacity, ownership, staffing), and our quoted lead times never adjusted: actual lead times now run 8–13 days past quote for all four offenders (Q06).
+The quarterly trend (Q05, using LAG) separates two very different problems. Cascade has **always** been bad — between 5.6% and 35.7% OTD in every quarter for two years. Pacific Anodize is the opposite: it ran **94–100% on-time in three of its first four quarters (66.7% in Q4 2024), then collapsed to 50% → 42% → 0% → 0%**. Something changed at that supplier around mid-2025 (capacity, ownership, staffing), and our quoted lead times never adjusted: actual lead times now run 8–13 days past quote for all four offenders (Q06).
 
 ## Finding 2 — Inventory records get less trustworthy exactly where we look least
 

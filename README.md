@@ -24,7 +24,7 @@ Each chart exists to answer one specific question from the analysis — rendered
 ### Chronic vs Collapsing Suppliers
 ![Quarterly OTD trend](visuals/otd_quarterly_trend.png)
 
-**Why this chart:** a single OTD number hides direction. The quarterly trend (Q05, built with `LAG()`) separates the two failure modes that need different conversations: Cascade has been bad in every quarter for two years (a sourcing decision), while Pacific Anodize was near-perfect until mid-2025 and then collapsed to 0% (a "what changed at your site?" conversation). The all-supplier line is the baseline both are judged against.
+**Why this chart:** a single OTD number hides direction. The quarterly trend (Q05, built with `LAG()`) separates the two failure modes that need different conversations: Cascade has been bad in every quarter for two years (a sourcing decision), while Pacific Anodize ran mostly 94–100% on time until mid-2025 and then collapsed to 0% (a "what changed at your site?" conversation). The all-supplier line is the baseline both are judged against.
 
 ### Cycle-Count Accuracy by ABC Class
 ![Cycle-count accuracy](visuals/cycle_count_accuracy.png)

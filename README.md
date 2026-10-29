@@ -1,14 +1,17 @@
 # AeroSupply Analytics — Supplier & Inventory Analysis for an AS9100 Aerospace Shop
 
-End-to-end SQL portfolio project: a synthetic-but-realistic aerospace interiors manufacturer (PSU-100 Passenger Service Units, FAD-200 Fuel Access Doors) analyzed from raw CSVs to a findings memo and a Power BI dashboard.
+End-to-end SQL portfolio project: a synthetic-but-realistic aerospace interiors manufacturer (PSU-100 Passenger Service Units, FAD-200 Fuel Access Doors) analyzed from raw CSVs to a findings memo and a Power BI dashboard, then put on a daily schedule.
 
-**Stack:** PostgreSQL · SQL (CTEs, window functions, multi-table joins) · Python (data generation) · Power BI
+The project runs in two steps. First, 14 SQL queries find the problems once and `FINDINGS.md` explains them. Then a small pipeline in [`pipeline/`](pipeline/) recomputes the supplier numbers every morning and refuses to publish a report built on bad data.
 
-## The three questions this project answers
+**Stack:** PostgreSQL · SQL (CTEs, window functions, multi-table joins) · Python (data generation, Polars, DuckDB, pytest) · Power BI
+
+## The four questions this project answers
 
 1. **Which suppliers are hurting us, and is it getting worse?** → supplier OTD scorecard + quarterly trend with `LAG()`
 2. **Can we trust our inventory records?** → cycle-count accuracy by ABC class (96.9% A-class vs 87.3% C-class)
 3. **Can we actually build what's released?** → BOM explosion vs on-hand: 7 fastener shortages, all traced to one supplier's overdue POs
+4. **Is it still true this morning?** → a daily pipeline that rebuilds the supplier scorecard, monthly OTD trend and delinquency aging from the same data, and logs PASS or FAIL
 
 Full writeup with numbers: [`FINDINGS.md`](FINDINGS.md)
 
@@ -41,6 +44,14 @@ Each chart exists to answer one specific question from the analysis — rendered
 
 **Why this chart:** in an AS9100 shop, expired sealant on the shelf is a quarantine-and-disposition action, not just a cost line. The chart (Q14) splits the exposure into material already past estimated expiry (red, labeled) versus lots inside the 90-day warning window (amber), sized by dollars at risk — which is what makes the $50K of fuel tank sealant the headline.
 
+## Daily monitoring
+
+The analysis answers the questions once. [`pipeline/`](pipeline/) keeps answering the supplier ones every day: it reads the same `data/` files, rebuilds the scorecard, the monthly OTD trend and delinquency aging with Polars and DuckDB, and writes them to Excel. Before writing anything it checks the input (file present, at least 500 rows, no blank supplier, promise date or PO number, every supplier known). If a check fails, it logs `FAIL` and exits with an error so Task Scheduler flags the run. Details: [`pipeline/README.md`](pipeline/README.md).
+
+The tests in `tests/` make sure the two halves never drift apart: the pipeline's numbers must match the SQL (Q03 and Q04) on the same data.
+
+There are two supplier scorecards on purpose. The daily one lists all 40 suppliers so buyers see everyone; the Q04 ranking in the analysis only includes suppliers with at least 15 lines, so small samples don't distort it.
+
 ## Repo structure
 
 ```
@@ -54,13 +65,16 @@ Each chart exists to answer one specific question from the analysis — rendered
 ├── sql/
 │   ├── schema.sql            # DDL + \copy load + indexes
 │   └── analysis_queries.sql  # 14 commented queries in 4 phases
+├── pipeline/                 # daily OTD report: pipeline.py, sample outputs, run log
+├── tests/                    # pytest: pipeline checks + pipeline-vs-SQL consistency
 ├── visuals/                  # README charts, rendered by make_visuals.py
 ├── generate_data.py          # reproducible dataset generator (seed=42)
 ├── make_visuals.py           # renders the charts; asserts against query output
 ├── run_validation.py         # runs every query, writes validation_results.txt
 ├── validation_results.txt    # full output of all 14 queries
 ├── FINDINGS.md               # analyst memo: 3 findings + recommendations
-└── powerbi_dashboard_guide.md# data model, DAX measures, 3-page layout
+├── powerbi_dashboard_guide.md# data model, DAX measures, 3-page layout
+└── requirements.txt          # Python packages for the scripts, pipeline and tests
 ```
 
 ## Reproduce it
@@ -69,6 +83,15 @@ Each chart exists to answer one specific question from the analysis — rendered
 createdb aerosupply
 cd data && psql -d aerosupply -f ../sql/schema.sql   # loads all six tables
 psql -d aerosupply -f ../sql/analysis_queries.sql    # runs the analysis
+```
+
+Or without a database, using DuckDB:
+
+```bash
+pip install -r requirements.txt
+python run_validation.py        # runs all 14 queries, writes validation_results.txt
+python -m pytest                # pipeline checks + pipeline-vs-SQL consistency
+python pipeline/pipeline.py     # today's OTD report into pipeline/output/
 ```
 
 Or regenerate the data from scratch: `python generate_data.py`

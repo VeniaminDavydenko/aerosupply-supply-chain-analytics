@@ -1,7 +1,9 @@
 # Supplier OTD Pipeline
 
 A small, scheduled Python pipeline that turns raw purchase-order lines into a
-daily supplier on-time-delivery (OTD) report. One script, four stages:
+daily supplier on-time-delivery (OTD) report. It is the daily half of the
+[AeroSupply analysis](../README.md): the SQL finds the problems once, this
+keeps watching the supplier numbers every morning. One script, four stages:
 **clean → metrics → validate → output.** Structured below around the six
 [CRISP-DM](https://en.wikipedia.org/wiki/Cross-industry_standard_process_for_data_mining)
 phases.
@@ -9,8 +11,11 @@ phases.
 **Stack:** just two tools — **Polars** (clean + write) and **DuckDB** (SQL metrics).
 
 ```
-python pipeline.py
+python pipeline/pipeline.py
 ```
+
+Optional flags for testing or a different feed: `--data`, `--out`, `--log`,
+`--run-date`.
 
 Reads `../data/purchase_order_lines.csv` and `../data/suppliers.csv`; writes one
 timestamped Excel file per metric plus a Parquet extract into `output/`, and a
@@ -61,13 +66,17 @@ lines only) inline, which reads closer to the business question than nested
 
 ## 5 · Evaluation (Stage 3 — Validate)
 
-Before writing anything, two cheap checks: row count is above a sane floor
-(500), and there are **zero nulls** in the columns everything keys on —
-`supplier_id`, `promised_date`, `po_number`. **Fail fast:** if a check fails the
+Before computing or writing anything, four cheap checks: both input files
+exist, row count is above a sane floor (500), there are **zero nulls** in the
+columns everything keys on — `supplier_id`, `promised_date`, `po_number` (a
+date that won't parse counts as null) — and every `supplier_id` exists in
+`suppliers.csv`, because the scorecard's join would otherwise drop those lines
+without a word. **Fail fast:** if a check fails the
 pipeline appends a `FAIL` line to the log, prints the reason, and exits
 non-zero — so a scheduler flags the run instead of shipping a confident-looking
 wrong report. A halved feed or dropped supplier IDs is caught here, not by a
-buyer staring at a broken scorecard.
+buyer staring at a broken scorecard. `tests/test_pipeline.py` breaks the data
+each of these ways and checks that the run fails before writing a file.
 
 ## 6 · Deployment (Windows Task Scheduler)
 

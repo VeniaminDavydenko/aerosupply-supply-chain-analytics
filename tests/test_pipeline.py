@@ -99,3 +99,31 @@ def test_same_day_rerun(tmp_path):
     assert code == 0
     assert files == OUTPUTS
     assert sum("| PASS |" in line for line in lines) == 2
+
+
+def test_fail_unreadable_input(data_copy, tmp_path):
+    (data_copy / "purchase_order_lines.csv").write_text("")
+    code, lines, files = run(data_copy, tmp_path)
+    assert code == 1
+    assert "| FAIL | cannot read input" in lines[-1]
+    assert files == set()
+
+
+def test_fail_duplicate_supplier(data_copy, tmp_path):
+    path = data_copy / "suppliers.csv"
+    text = path.read_text()
+    path.write_text(text + text.splitlines()[1] + "\n")
+    code, lines, files = run(data_copy, tmp_path)
+    assert code == 1
+    assert "| FAIL | duplicate supplier_id in suppliers.csv: ['S001']" in lines[-1]
+    assert files == set()
+
+
+def test_fail_bad_received_date(data_copy, tmp_path):
+    header = (DATA / "purchase_order_lines.csv").read_text().splitlines()[0].split(",")
+    col = header.index("received_date")
+    edit_po_lines(data_copy, lambda rows: [[*r[:col], "2026-13-45", *r[col + 1:]] if i == 0 else r for i, r in enumerate(rows)])
+    code, lines, files = run(data_copy, tmp_path)
+    assert code == 1
+    assert "| FAIL | unparseable received_date" in lines[-1]
+    assert files == set()

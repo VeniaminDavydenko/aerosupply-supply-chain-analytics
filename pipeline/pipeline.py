@@ -1,4 +1,4 @@
-"""Daily supplier on-time-delivery report: clean, metrics, validate, output."""
+"""Daily supplier on-time-delivery report: clean, validate, metrics, output."""
 import argparse
 import sys
 from datetime import date, datetime
@@ -28,6 +28,7 @@ def load(data_dir: Path) -> dict[str, pl.DataFrame]:
     # Clean
     clean_df = (
         pl.scan_csv(data_dir / "purchase_order_lines.csv")
+        .with_columns(pl.col("received_date").alias("received_raw"))
         .with_columns(
             pl.col("promised_date").str.to_date(strict=False),
             pl.col("received_date").str.to_date(strict=False),
@@ -40,8 +41,10 @@ def load(data_dir: Path) -> dict[str, pl.DataFrame]:
         )
         .collect()
     )
+    # a receipt date that won't parse would turn a delivered line into a fake open one
+    unparsed = clean_df.filter(pl.col("received_raw").is_not_null() & pl.col("received_date").is_null())
     suppliers_df = pl.read_csv(data_dir / "suppliers.csv")
-    return {"clean": clean_df, "suppliers": suppliers_df}
+    return {"clean": clean_df.drop("received_raw"), "unparsed_received": unparsed, "suppliers": suppliers_df}
 
 
 def metrics(frames: dict[str, pl.DataFrame]) -> dict[str, pl.DataFrame]:
@@ -107,6 +110,12 @@ def validate(frames: dict[str, pl.DataFrame]) -> str | None:
     bad = {col: n for col, n in nulls.items() if n > 0}
     if bad:
         return f"null values in required columns: {bad}"
+    if frames["unparsed_received"].height:
+        return f"unparseable received_date on PO lines: {frames['unparsed_received']['po_number'].to_list()}"
+    # a repeated supplier row would double that supplier's lines in every JOIN
+    dupes = frames["suppliers"].filter(pl.col("supplier_id").is_duplicated())["supplier_id"].unique().sort().to_list()
+    if dupes:
+        return f"duplicate supplier_id in suppliers.csv: {dupes}"
     # an inner JOIN would silently drop these lines from the scorecard
     unknown = clean_df.join(frames["suppliers"], on="supplier_id", how="anti")["supplier_id"].unique().sort().to_list()
     if unknown:
@@ -128,8 +137,11 @@ def main(argv: list[str] | None = None) -> int:
     if missing:
         reason = f"missing input: {', '.join(missing)}"
     else:
-        frames = load(args.data)
-        reason = validate(frames)    # before metrics, so bad data never reaches the SQL
+        try:
+            frames = load(args.data)
+            reason = validate(frames)    # before metrics, so bad data never reaches the SQL
+        except Exception as e:           # empty, ragged or wrongly shaped file
+            reason = f"cannot read input: {type(e).__name__}: {e}"
     if reason:
         log(args.log, f"{stamp} | FAIL | {reason}")
         print(f"VALIDATION FAILED: {reason}")

@@ -4,7 +4,7 @@ A small, scheduled Python pipeline that turns raw purchase-order lines into a
 daily supplier on-time-delivery (OTD) report. It is the daily half of the
 [AeroSupply analysis](../README.md): the SQL finds the problems once, this
 keeps watching the supplier numbers every morning. One script, four stages:
-**clean → metrics → validate → output.** Structured below around the six
+**clean → validate → metrics → output.** Structured below around the six
 [CRISP-DM](https://en.wikipedia.org/wiki/Cross-industry_standard_process_for_data_mining)
 phases.
 
@@ -44,12 +44,11 @@ the project's SQL analysis.
 Loads the CSV **lazily** (`scan_csv`), parses the two date columns, and derives
 `days_late` (receipt − promise) and an `on_time` flag (`days_late <= 0`). Open
 lines keep null dates on purpose — they're needed for the overdue metric.
-Cancelled lines are filtered *if* a status column exists (a documented no-op
-here — this dataset has none). **Why Polars:** lazy evaluation plans the whole
+**Why Polars:** lazy evaluation plans the whole
 parse/derive/filter as one pass and only touches the columns used — the habit
 that scales to millions of rows.
 
-## 4 · Modeling / Analysis (Stage 2 — DuckDB)
+## 4 · Modeling / Analysis (Stage 3 — DuckDB)
 
 DuckDB reads the cleaned Polars frame *by variable name* (no copy, no database)
 and runs three SQL queries, each returned as a Polars frame:
@@ -64,14 +63,17 @@ and runs three SQL queries, each returned as a Polars frame:
 lines only) inline, which reads closer to the business question than nested
 `CASE` sums.
 
-## 5 · Evaluation (Stage 3 — Validate)
+## 5 · Evaluation (Stage 2 — Validate, before any metric)
 
-Before computing or writing anything, four cheap checks: both input files
-exist, row count is above a sane floor (500), there are **zero nulls** in the
-columns everything keys on — `supplier_id`, `promised_date`, `po_number` (a
-date that won't parse counts as null) — and every `supplier_id` exists in
-`suppliers.csv`, because the scorecard's join would otherwise drop those lines
-without a word. **Fail fast:** if a check fails the
+Right after cleaning, before any metric runs or any file is written, cheap
+checks on the input: both files exist and can be read; row count is above a
+sane floor (500); there are **zero nulls** in the columns everything keys on —
+`supplier_id`, `promised_date`, `po_number` (a promise date that won't parse
+counts as null); every `received_date` that has a value parses, because a bad
+one would quietly turn a delivered line into an overdue one; no supplier is
+listed twice in `suppliers.csv`, which would double its lines in every join; and
+every `supplier_id` exists in `suppliers.csv`, because the join would otherwise
+drop those lines without a word. **Fail fast:** if a check fails the
 pipeline appends a `FAIL` line to the log, prints the reason, and exits
 non-zero — so a scheduler flags the run instead of shipping a confident-looking
 wrong report. A halved feed or dropped supplier IDs is caught here, not by a
@@ -85,9 +87,11 @@ Run it every morning before buyers start:
 1. **Task Scheduler → Create Basic Task** → name it "Supplier OTD Pipeline".
 2. **Trigger:** Daily, e.g. 6:00 AM.
 3. **Action:** *Start a program.*
-   - Program/script: `python`
-   - Arguments: `pipeline.py`
-   - Start in: the full path to this `pipeline/` folder.
+   - Program/script: the full path to the project's virtual environment
+     Python, e.g. `C:\path\to\repo\.venv\Scripts\python.exe` (a bare
+     `python` may not have the packages from `requirements.txt`).
+   - Arguments: `pipeline\pipeline.py`
+   - Start in: the full path to the repo folder.
 4. Finish. Right-click the task → **Run** once to confirm it works.
 
 **What the log proves:** each run appends one line to `pipeline_log.txt` —

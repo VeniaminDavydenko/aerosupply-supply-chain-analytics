@@ -2,3 +2,6 @@ __pycache__/
 *.pyc
 .venv/
 .pytest_cache/
+pipeline/output/*
+!pipeline/output/*2026-07-20*
+!pipeline/output/.gitkeep

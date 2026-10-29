@@ -1,10 +1,10 @@
 # AeroSupply Analytics — Supplier & Inventory Analysis for an AS9100 Aerospace Shop
 
-End-to-end SQL portfolio project: a synthetic-but-realistic aerospace interiors manufacturer (PSU-100 Passenger Service Units, FAD-200 Fuel Access Doors) analyzed from raw CSVs to a findings memo and a Power BI dashboard, then put on a daily schedule.
+End-to-end SQL portfolio project: a synthetic-but-realistic aerospace interiors manufacturer (PSU-100 Passenger Service Units, FAD-200 Fuel Access Doors) analyzed from raw CSVs to a findings memo, then put on a daily schedule.
 
 The project runs in two steps. First, 14 SQL queries find the problems once and `FINDINGS.md` explains them. Then a small pipeline in [`pipeline/`](pipeline/) recomputes the supplier numbers every morning and refuses to publish a report built on bad data.
 
-**Stack:** PostgreSQL · SQL (CTEs, window functions, multi-table joins) · Python (data generation, Polars, DuckDB, pytest) · Power BI
+**Stack:** PostgreSQL · SQL (CTEs, window functions, multi-table joins) · Python (Polars, DuckDB, pytest)
 
 ## The four questions this project answers
 
@@ -17,7 +17,7 @@ Full writeup with numbers: [`FINDINGS.md`](FINDINGS.md)
 
 ## Visuals
 
-Each chart exists to answer one specific question from the analysis — rendered by `make_visuals.py` (Q-numbers reference `sql/analysis_queries.sql`).
+Each chart answers one specific question from the analysis (Q-numbers reference `sql/analysis_queries.sql`).
 
 ### Supplier OTD Scorecard
 ![Supplier OTD scorecard](visuals/supplier_scorecard.png)
@@ -67,14 +67,11 @@ There are two supplier scorecards on purpose. The daily one lists all 40 supplie
 │   └── analysis_queries.sql  # 14 commented queries in 4 phases
 ├── pipeline/                 # daily OTD report: pipeline.py, sample outputs, run log
 ├── tests/                    # pytest: pipeline checks + pipeline-vs-SQL consistency
-├── visuals/                  # README charts, rendered by make_visuals.py
-├── generate_data.py          # reproducible dataset generator (seed=42)
-├── make_visuals.py           # renders the charts; asserts against query output
+├── visuals/                  # the charts shown above
 ├── run_validation.py         # runs every query, writes validation_results.txt
 ├── validation_results.txt    # full output of all 14 queries
 ├── FINDINGS.md               # analyst memo: 3 findings + recommendations
-├── powerbi_dashboard_guide.md# data model, DAX measures, 3-page layout
-└── requirements.txt          # Python packages for the scripts, pipeline and tests
+└── requirements.txt          # Python packages for the pipeline and tests
 ```
 
 ## Reproduce it
@@ -94,8 +91,6 @@ python -m pytest                # pipeline checks + pipeline-vs-SQL consistency
 python pipeline/pipeline.py     # today's OTD report into pipeline/output/
 ```
 
-Or regenerate the data from scratch: `python generate_data.py`
-
 ## Why synthetic data
 
-Real AS9100 shop data is ITAR/proprietary and can't leave the building. The generator models real patterns from aerospace floor experience — serialized parts, shelf-life-controlled sealants, conditional supplier approvals, work-order-driven demand — and bakes in discoverable problems so the SQL has something true to find. Every number in the findings is the output of a query in `analysis_queries.sql`, not an assumption.
+Real AS9100 shop data is ITAR/proprietary and can't leave the building. The data models real patterns from aerospace floor experience — serialized parts, shelf-life-controlled sealants, conditional supplier approvals, work-order-driven demand — and has discoverable problems built in so the SQL has something true to find. Every number in the findings is the output of a query in `analysis_queries.sql`, not an assumption.
